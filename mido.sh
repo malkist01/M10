@@ -23,9 +23,11 @@ export KBUILD_BUILD_HOST="phone"
 # KernelSU
 # ============================
 
-curl -LSs "https://raw.githubusercontent.com/malkist01/ReSukiSU/refs/heads/main/kernel/setup.sh" | bash -s main
-chmod +x test.patch
-patch p1 < test.patch
+curl -LSs "https://raw.githubusercontent.com/ReSukiSU/ReSukiSU/refs/heads/main/kernel/setup.sh" | bash -s main
+echo "CONFIG_KSU=y" >> ./arch/arm64/configs/vendor/kona-perf_defconfig
+echo "CONFIG_KSU_MANUAL_HOOK=y" >> ./arch/arm64/configs/vendor/kona-perf_defconfig
+curl -LSs "https://raw.githubusercontent.com/JackA1ltman/NonGKI_Kernel_Build_2nd/refs/heads/mainline/Patches/syscall_hook_patches.sh" | bash -s
+curl -LSs "https://raw.githubusercontent.com/JackA1ltman/NonGKI_Kernel_Build_2nd/refs/heads/mainline/Patches/backport_patches.sh" | bash -s
 
 # ============================
 # Variabel Telegram dan Device Info
