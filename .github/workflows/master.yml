@@ -21,7 +21,7 @@ jobs:
       CHAT_ID: -1002287610863
       KERNEL_NAME: Teletubies
       KERNEL_BRANCH: 10
-      KERNEL_REPO: https://github.com/malkist/M10
+      KERNEL_REPO: https://github.com/malkist01/M10.git
       ANYKERNEL_REPO: https://github.com/malkist01/Anykernel3
       CLANG_URL: https://gitlab.com/kei-space/clang/r547379.git
       KSU_URL: https://raw.githubusercontent.com/Sorayukii/KernelSU-Next/stable/kernel/setup.sh
