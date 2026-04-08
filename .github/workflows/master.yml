@@ -28,9 +28,6 @@ jobs:
       KSU_BRANCH: hookless
 
     steps:
-    - name: Checkout workflow repo
-      uses: actions/checkout@v4
-
     - name: Install dependencies
       run: |
         sudo apt update
