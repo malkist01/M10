@@ -16,6 +16,7 @@ ZIPNAME="Teletubies-ReSukiSU-$ANDROID_VER-$PHONE-$(date '+%Y%m%d-%H%M').zip"
 BOT_TOKEN="7868194496:AAGY7WwRRbeCOPYOnczoCPh2psC43Q0F3JI"
 CHAT_ID="-1002287610863"
 COMPILERDIR="$(pwd)/../aosp-clang"
+export PATH="$COMPILERDIR/bin:$PATH"
 export KBUILD_BUILD_USER="malkist"
 export KBUILD_BUILD_HOST="phone"
 
@@ -71,7 +72,6 @@ sleep 2
 echo -e "$green[+] Wait.. Cloning clang...\033[0m \n"
 sleep 2
 git clone https://github.com/malkist01/clang-azure.git --depth=1 -b main $COMPILERDIR
-mkdir $COMPILERDIR
 sleep 1
 echo
 echo -e "\n$green[!] Lets's Build UwU...\033[0m \n"
