@@ -24,8 +24,8 @@ export KBUILD_BUILD_HOST="phone"
 # ============================
 
 curl -LSs "https://raw.githubusercontent.com/ReSukiSU/ReSukiSU/refs/heads/main/kernel/setup.sh" | bash -s main
-echo "CONFIG_KSU=y" >> ./arch/arm64/configs/vendor/kona-perf_defconfig
-echo "CONFIG_KSU_MANUAL_HOOK=y" >> ./arch/arm64/configs/vendor/kona-perf_defconfig
+echo "CONFIG_KSU=y" >> ./arch/arm64/configs/mido_defconfig
+echo "CONFIG_KSU_MANUAL_HOOK=y" >> ./arch/arm64/configs/mido_defconfig
 curl -LSs "https://raw.githubusercontent.com/JackA1ltman/NonGKI_Kernel_Build_2nd/refs/heads/mainline/Patches/syscall_hook_patches.sh" | bash -s
 curl -LSs "https://raw.githubusercontent.com/JackA1ltman/NonGKI_Kernel_Build_2nd/refs/heads/mainline/Patches/backport_patches.sh" | bash -s
 
@@ -70,11 +70,8 @@ echo -e "\n$red[!] clang Dir Not Found!!!\033[0m \n"
 sleep 2
 echo -e "$green[+] Wait.. Cloning clang...\033[0m \n"
 sleep 2
-wget -q https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/105aba85d97a53d364585ca755752dae054b49e8/clang-r584948b.tar.gz -O clang.tar.gz
-    rm -rf $COMPILERDIR 
-    mkdir $COMPILERDIR 
-    tar -xvf clang.tar.gz -C $COMPILERDIR
-    rm -rf clang.tar.gz
+git clone https://github.com/malkist01/clang-azure.git --depth=1 -b main $COMPILERDIR
+mkdir $COMPILERDIR
 sleep 1
 echo
 echo -e "\n$green[!] Lets's Build UwU...\033[0m \n"
